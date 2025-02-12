@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function changeColor(){
+            let color=document.getElementById("txtColor").value;
+            let bgColor=document.getElementById("bgColor").value;
+            document.getElementById("txtDiv").style.backgroundColor=bgColor;
+            txtDiv.style.color=color;
+        }
+    </script>
+</head>
+<body>
+    <p><input type="text" id="txtColor">
+    <select id="bgColor">
+        <option>yellow</option>    
+        <option>lavender</option>
+        <option>pink</option>
+    </select>
+    <button onclick="changeColor()">Submit</button></p>
+    <h2 id="txtDiv">Hello World</h2>
+</body>
+</html>
