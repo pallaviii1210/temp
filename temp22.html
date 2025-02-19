@@ -6,7 +6,7 @@
     <title>Document</title>
     <style>
       body {
-        background-color: #eeeeee;
+        background-color: #eeeff0;
       }
       .container {
         background-color: white;
@@ -14,12 +14,14 @@
         padding: 10px;
         width: 400px;
         margin: auto;
+        box-shadow: 5px 5px 5px 5px rgba(0,0,0,0.1);
       }
       .row {
         display: flex;
         justify-content: center;
       }
       .title {
+        font-family:'Times New Roman';
         font-size: 30px;
         margin-top: 10px;
       }
@@ -27,7 +29,7 @@
         font-size: 50px;
         color: rgb(14, 99, 226);
         font-weight: bold;
-        font-family: verdana;
+        font-family: klakia;
       }
       .caption {
         font-size: 15px;
@@ -40,8 +42,8 @@
         width: 100%;
         margin: 5px;
         border-radius: 5px;
-        padding: 5px;
-        border: 1px solid gray;
+        padding: 13px;
+        border: 0.5px solid rgb(198, 189, 189);
       }
       button {
         color: white;
@@ -52,6 +54,9 @@
         width: 200px;
         border: none;
         margin: 5px;
+      }
+      button:hover{
+        background-color: rgb(33, 150, 33);
       }
       .leftCaption {
         color: gray;
@@ -67,18 +72,20 @@
         margin: 2px;
       }
       .radioClass {
-        border: 1px solid gray;
+        border: 1px solid rgb(223, 220, 220);
         display: flex;
         justify-content: space-between;
         width: 100%;
         margin: 5px;
         border-radius: 5px;
-        padding: 3px;
+        padding: 5px;
       }
     </style>
     
   </head>
-  <body><center>
+  <body>
+    </script>
+    <center>
     <div class="header">facebook</div>
     </center>
     <br>
@@ -92,9 +99,42 @@
         </div>
       </div>
       <hr>
+      <div id="root"></div>
+    <script>
+
+        const showData=()=>{
+            let firstname=document.getElementById("firstname").value;
+            let surname=document.getElementById("surname").value;
+            let email=document.getElementById("email").value
+            let password=document.getElementById("password").value
+            let gender=document.getElementsByName("gender");
+            let pronoun=document.getElementById("prSelect").value
+            let day=document.getElementById("day").value
+            let month=document.getElementById("month").value
+            let year=document.getElementById("year").value
+            let dob=`${day}-${month}-${year}`
+            let g=""
+            if(gender[0].checked) g="Female";
+            if(gender[1].checked) g="Male";
+            if(gender[2].checked) g=pronoun;
+            let str=`
+            <div>
+                <p>Name:${firstname} ${surname}</p>
+                <p>Email:${email}</p>
+                <p>Password:${password}</p>
+                <p>Gender:${g}</p>
+                <p>Date of Birth:${dob}</p>
+            </div>
+            `;
+            root.innerHTML=str;
+        };
+
+        const showForm=()=>{
+            let str=`
+
       <div class="row">
-        <input type="text" placeholder="First name" />
-        <input type="text" placeholder="Surname" />
+        <input type="text" id="firstname" placeholder="First name" />
+        <input type="text" id="surname" placeholder="Surname" />
       </div>
       <div class="row" style="justify-content: start">
         <div class="leftCaption">
@@ -118,29 +158,40 @@
       <div class="row">
         <div class="radioClass">
           <div><label> Female</label></div>
-          <div><input type="radio" name="gender" /></div>
+          <div><input type="radio" name="gender" onclick="togglePronoun()" /></div>
         </div>
         <div class="radioClass">
             <div><label> Male</label></div>
-                <div><input type="radio" name="gender" /></div>
+                <div><input type="radio" name="gender" onclick="togglePronoun()"/></div>
         </div>
         <div class="radioClass">
             <div><label> Custom</label></div>
-            <div><input type="radio" name="gender" /></div>
+            <div><input type="radio" name="gender" onclick="togglePronoun()"/></div>
         </div>
       </div>
       <div class="row">
-        <input type="text" placeholder="Mobile number of email address">
+        <select id="prSelect" style="display:none">
+            <option value="NA">Select your pronoun</option>
+            <option value="She">She:"Wish her a happy birthday"</option>
+            <option value="He">He:"Wish him a happy birthday"</option>
+            <option value="They">They:"Wish them a happy birthday"</option>
+        </select>
+      </div>
+      <div class="row">
+        <input type="text" id="email" placeholder="Mobile number of email address">
     </div>
     <div class="row">
-    <input type="text" placeholder="New password">
+    <input type="password" id="password" placeholder="New password">
     </div>
     <center>
-    <button>Sign Up</button>
+    <button onclick='showData()'>Sign Up</button>
     </center>
     <br>
     </div>
-    <script>
+    `;
+    root.innerHTML=str;
+};
+    showForm();
         let str="";
         for(let i=1;i<=31;i++){
             str+=`<option>${i}</option>`;
@@ -156,6 +207,16 @@
             str+=`<option>${i}</option>`;
         }
         year.innerHTML=str;
+
+        const togglePronoun=()=>{
+            let p=document.getElementsByName("gender")
+            if(p[2].checked){
+            prSelect.style.display='block'
+            }
+            else{
+                prSelect.style.display='none'
+            }
+        };
     </script>
   </body>
 </html>
