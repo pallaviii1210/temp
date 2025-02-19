@@ -21,7 +21,7 @@
     background-color: white;
     box-shadow: 50px;
     }
-    input{
+    input,select{
     width: 150px;
     padding: 10px;
     border: 2px solid #ada8a8;
@@ -29,8 +29,9 @@
     font-size: 16px;
     }
     .row{
-        flex-wrap: wrap;
-    }
+        display:flex;
+        justify-content: center;
+     }
 
     </style>
 </head>
@@ -46,7 +47,13 @@
 
     <input type="text" placeholder="First name">
     <input type="text" placeholder="Surname"><br>
-    <p>Date of birth:<input type="date"></p>
+    <p>
+    <div class="row">
+        <select id="day"></select>
+        <select id="month"></select>
+        <select id="year"></select>
+    </div>
+    </p>
     <div>
         <input type="radio" name="gender" value="male"> Male
         <input type="radio" name="gender" value="female"> Female

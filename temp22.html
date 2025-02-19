@@ -24,7 +24,7 @@
         font-size:30px;
         margin-top: 30px;
      }
-     input{
+     input,select,label{
         width: 100%;
         margin: 5px;
         border-radius: 5px;
@@ -52,6 +52,7 @@
     .leftCaption{
         color: gray;
         margin-left: 5px;
+        font-size: 10px;
 
     }
     </style>
@@ -72,6 +73,17 @@
             </div>
             <div class="row" style="justify-content: start;">
             <div class="leftCaption">Date of birth</div>
+            </div>
+            <div class="row">
+                <select id="day"></select>
+                <select id="month"></select>
+                <select id="year"></select>
+            </div>
+            <div class="row">
+                <div>
+                    Female<input type="radio"/>
+                </div>
+
             </div>
         </div>
    </div>
