@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+        background-color: #eeeeee;
+     }
+     .container{
+         background-color: white;
+         text-align: center;
+         border-radius: 20px;
+         padding: 10px;
+         width:400px;
+         margin: auto;
+     }
+     .row{
+        display:flex;
+        justify-content: center;
+     }
+     .title{
+        font-size:30px;
+        margin-top: 30px;
+     }
+     input{
+        width: 100%;
+        margin: 5px;
+        border-radius: 5px;
+        padding: 5px;
+        border: 1px solid gray;
+     }
+     .header{
+        font-size:40px;
+        color: blue;
+        font-weight: bold;
+        font-family: Verdana;
+     }
+     .caption{
+        font-size:20px;
+        color:gray;
+        text-align: center;
+    }
+    button{
+        color:white;
+        background-color: green;
+        font-size: 20px;
+        padding: 10px;
+        border-radius: 20px;
+    }
+    .leftCaption{
+        color: gray;
+        margin-left: 5px;
+
+    }
+    </style>
+</head>
+<body>
+   <div class="container">
+    <div class="row">
+        <div class="header">facebook</div>
+        </div>
+        <div class="row">
+            <div>
+                <div class="title">Create a new account</div>
+                <div class="caption">It's quick and easy.</div>
+                <hr>
+                <div class="row">
+                <input type="text" placeholder="First Name">
+                <input type="text" placeholder="Surname">
+            </div>
+            <div class="row" style="justify-content: start;">
+            <div class="leftCaption">Date of birth</div>
+            </div>
+        </div>
+   </div>
+</body>
+</html>
