@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(242, 241, 247);
+        }
+    button{
+        background-color: rgb(106, 199, 106);
+        padding: 10px;
+    }
+    .box {
+    width: 400px;
+    border: 1px solid rgb(47, 44, 44);
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px;
+    background-color: white;
+    box-shadow: 50px;
+    }
+    input,select{
+    width: 150px;
+    padding: 10px;
+    border: 2px solid #ada8a8;
+    border-radius: 5px;
+    font-size: 16px;
+    }
+    .row{
+        display:flex;
+        justify-content: center;
+     }
+    
+
+    </style>
+</head>
+
+<body>
+    <center>
+        
+    <img src="assets/images/fb.png" width="300px" height="75px">
+    <div class="box">
+        <h3><b>Create a new account</b></h3>
+        <h6>Its's quick and easy.</h6>
+        <hr>
+
+    <input type="text" placeholder="First name">
+    <input type="text" placeholder="Surname"><br>
+    <p>
+        <div class="leftCaption">Date of birth</div>
+    <div class="row">
+        <select id="day"></select>
+        <select id="month"></select>
+        <select id="year"></select>
+    </div>
+    </p>
+    <div>
+        <input type="radio" name="gender" value="male"> Male
+        <input type="radio" name="gender" value="female"> Female
+        <input type="radio" name="gender" value="other"> Other
+    </div>
+    <p><input type="text" placeholder="Mobile number"></p><br>
+    <input type="text" placeholder="New password"><br>
+    <p><button>Sign Up</button></p>
+    </div>
+    </center>
+</body>
+</html>
